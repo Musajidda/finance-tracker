@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+    <title>Profile</title>
     <style>
         /* Styling for the profile page */
         body {
@@ -61,12 +61,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         nav {
-           
-            padding: 30px;
+            background-color: #333;
+            padding: 10px;
             display: flex;
-            justify-content: end;
-            color: green;
-
+            justify-content: center;
         }
 
         nav ul {
@@ -74,7 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             padding: 0;
             margin: 0;
             display: flex;
-            color: green;
         }
 
         nav ul li {
@@ -84,11 +81,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-size: 22px;
+            font-size: 16px;
             padding: 10px 15px;
             border-radius: 5px;
-            color: green;
-          
         }
 
         nav ul li a:hover {
@@ -129,11 +124,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             text-align: center;
             font-size: 18px;
         }
-    </style>
+        </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
+        <!-- Navigation Bar -->
+        <nav>
         <ul>
             <li><a href="dashboard.php">Home</a></li>
             <li><a href="moneytimeline.php">MoneyTimeline</a></li>
@@ -141,15 +136,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <li><a href="quiz.php">Quiz</a></li>
             <li><a href="planner.php">Planner</a></li>
             <li><a href="tracker.php">Tracker</a></li>
-            <li><a href="profile.php">Profile</a></li>
+           
         </ul>
     </nav>
 
     
-<p>
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore a ut quam at vero! Illum consequuntur, molestias error pariatur quaerat voluptas sequi eligendi beatae iste, non architecto tempora quisquam ea.
-</p>
+
        
     </div>
+    <!-- Profile Page Content -->
+    <div class="content">
+        <h1>Profile: <?php echo $_SESSION['user']; ?></h1>
+
+        <!-- Profile Form -->
+        <form action="profile.php" method="POST" class="profile-form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
+
+            <label for="password">Password (Leave blank to keep current password)</label>
+            <input type="password" id="password" name="password" placeholder="New password">
+
+            <button type="submit">Update Profile</button>
+        </form>
+        <a href="logout.php" class="logout">Logout</a>
 </body>
 </html>
