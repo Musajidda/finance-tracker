@@ -92,7 +92,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         nav ul li a:hover {
-            background-color: #575757;
+            background-color: green;
+            color: white;
         }
 
         .content {
@@ -129,6 +130,89 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             text-align: center;
             font-size: 18px;
         }
+        .banner {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(to right, green,green); /* A blue gradient */
+    color: white;
+    text-align: center;
+    padding: 30px 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner h1 {
+    margin: 0;
+    font-size: 80px;
+    font-weight: bold;
+}
+
+.banner h4 {
+    margin-top: 10px;
+    font-size: 28px;
+    
+}
+.sub-banner {
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to right, green,green); /* A blue gradient */
+    color: white;
+    text-align: center;
+    padding: 30px 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-banner h4 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+   
+    text-shadow: 0 0 10px rgba(36, 245, 78, 0.89);
+}
+.two-column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    
+   
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.text-column {
+    flex: 1;
+    min-width: 300px;
+    margin: 0 auto;
+}
+
+
+
+.text-column p {
+    font-size: 25px;
+    line-height: 1.6;
+}
+
+.video-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.video-column video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+
     </style>
 </head>
 <body>
@@ -145,11 +229,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </ul>
     </nav>
 
-    
-<p>
-    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Labore a ut quam at vero! Illum consequuntur, molestias error pariatur quaerat voluptas sequi eligendi beatae iste, non architecto tempora quisquam ea.
-</p>
-       
+   <main>
+    <!-- Banner Section -->
+<div class="banner">
+    <h1>The History and Evolution of Money</h1>
+    <h4>From Barter to Blockchain: Tracing the Milestones that Shaped Our Financial World</h4>
+</div>
+<br>
+<div class="sub-banner">
+    <h4>Understanding the evolution of money at it's core</h4>
+   
+</div>
+<div class="two-column">
+    <div class="text-column">
+        <p>
+        Understanding how money has evolved is key to making smart financial decisions today. From the early days of trading goods to the digital currencies of today, the way we use money has shaped economies, societies, and personal wealth. By learning how money has transformed over time, you’ll gain a better understanding of why we trust certain systems, how new financial tools like cryptocurrencies emerged, and how to adapt to the changes happening in the financial world today. Whether you're managing personal savings or running a business, knowing the history of money gives you the power to make informed choices and stay ahead in a fast-changing economy.
+        </p>
     </div>
+    <div class="video-column">
+        <video controls width="100%">
+            <source src="assets/videos/video1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+
+   </main> 
+
+       
+  
 </body>
 </html>

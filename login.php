@@ -188,9 +188,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="signup-section">
             <h2>New here?</h2>
             <p>Create an account to get started</p>
-            <form action="signup.php" method="GET">
-                <button type="submit" class="signup-btn">Sign Up</button>
-            </form>
+            <a href="signup.php"> <button type="submit" class="signup-btn">Sign Up</button></a>
+               
+            
         </div>
     </div>
 </body>

@@ -45,13 +45,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
-            background: url('assets/signup/background.jpg') no-repeat center center/cover;
-            background-size: 75% 70%;
+            background: url('assets/signup/background.jpg') no-repeat center center/cover  ;
+            background-size: 75% 70% 70%; /* Adjust the percentage as needed */
+            
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            width: 230vh;
+            
             font-family: Arial, sans-serif;
+            position: unset;
         }
         .main-container {
             display: flex;
@@ -69,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             box-shadow: 0px 0px 10px rgba(0, 128, 0, 0.5);
             text-align: center;
             width: 350px;
+            position: relative;
             margin: 20px;
             border: 5px solid green;
         }
@@ -118,10 +123,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background: darkgreen;
         }
         .login-section {
+           
             text-align: center;
             padding: 20px;
-            margin-top: 20px;
+           margin-top: 20px;
             width: 300px;
+        }
+        .login-section h2 p {
+            color: black;
+            text-align: center;
         }
         .login-btn {
             background: green;
