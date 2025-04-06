@@ -211,7 +211,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
+.text p{
+width: 100%;
+font-size: 25px;
+line-height: 1.6;
+}
+.image-column {
+    display: flex;
+    justify-content: center; /* Centers the images horizontally */
+    align-items: center; /* Centers the images vertically */
+    gap: 20px; /* Adds spacing between the images */
+    margin: 20px 0; /* Adds some margin above and below the image column */
+}
 
+.image-column img {
+    max-width: 100%; /* Ensures the images are responsive */
+    height: auto; /* Maintains the aspect ratio of the images */
+    border-radius: 10px; /* Adds rounded corners to the images */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for better aesthetics */
+}
 
     </style>
 </head>
@@ -253,8 +271,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </video>
     </div>
 </div>
+<div class="text">
+    <h1>Why Money Matters -The Foundation of Civilization</h1>
+    <p>Money has been one of the most powerful tools shaping the rise of human civilization. Long before coins or paper bills, ancient <br> communities relied on trade to meet their needs, exchanging goods and services to survive and prosper. As societies grew and became <br>more complex, the need for a common medium of exchange became crucial. Trade networks connected distant regions, spreading <br> culture, knowledge, and technology. Money, in its earliest and later forms, fueled exploration, built empires, and laid the groundwork for <br> modern economies. By enabling people to assign value to goods and services, money allowed for organized commerce, wealth creation,<br> and the birth of financial institutions that still influence our lives today.</h4>
+</div>
+<div class="image-column">
+    <div class="">
+        <img src="assets/history/image1.png" alt="image1">
+    </div>
+    <div class="">
+    <img src="assets/history/image2.png" alt="image2">
+    </div>
+</div>
 
+<div class="text">
+<h1>The Barter System -  The Oldest Form of Trade</h1>
+<p>
+Long before the invention of money, early human societies relied on a simple but essential practice to survive: bartering. Bartering is the direct exchange of goods and services between individuals or groups without using a medium of exchange like coins or paper money. This system dates back thousands of years and is believed to be one of the earliest forms of economic interaction among humans.
+<br>
+<br>
+In early communities, survival depended on cooperation and mutual benefit. A farmer who grew crops might exchange a portion of his harvest with a herder for livestock. A craftsman could trade handmade tools or pottery for food, clothing, or other necessities. This give-and-take system worked well within small, close-knit groups where trust and social bonds were strong.
+<br>
+<br>
+Bartering wasn't just limited to basic survival. As humans began to settle in villages and towns, local trade became more organized. People specialized in specific trades — some focused on agriculture, others on fishing, hunting, tool-making, or cloth weaving. This specialization made bartering a practical solution to meet varied needs. Villages would often have marketplaces where individuals gathered to trade surplus goods and services in person.
+<br>
+<br>
+As trade networks expanded beyond local regions, bartering also helped establish relationships between distant communities. Early civilizations, such as the Mesopotamians, Egyptians, and Indus Valley traders, bartered grain, spices, textiles, metals, and other valuable commodities across vast distances. Rivers, oceans, and early trade routes like the Silk Road allowed these exchanges to shape early commerce and cultural exchange between civilizations.
+<br>
+<br>
+Despite its benefits in primitive economies, the barter system relied heavily on personal negotiation and agreement. There was no formal price structure or universal value, so each trade depended on perceived worth and immediate needs. In many ways, this early system laid the groundwork for the creation of standardized currency systems that would later emerge to simplify transactions.
+<br>
+<br>
+Bartering also played a significant cultural role. In many societies, it wasn't just an economic transaction but a social event. People built trust, established long-term trading partnerships, and reinforced community bonds through these exchanges. Festivals and fairs were often held to bring traders together in larger gatherings, facilitating bartering on a much broader scale.
 
+</p>
+</div>
    </main> 
 
        
