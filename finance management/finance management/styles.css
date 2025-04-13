@@ -1,0 +1,244 @@
+ /* Global Styles */
+ * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+ body { background: #f8f8f8; color: #333; overflow-x: hidden; }
+
+ /* Navbar */
+ .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; background: white; position: absolute; width: 100%; top: 0; left: 0; z-index: 1000; }
+ .logo img { height: 80px; }
+ .nav-links { display: flex; gap: 20px; }
+ .nav-links a { text-decoration: none; color: #055a1c; font-size: 16px; font-weight: bold; padding: 8px 15px; border-radius: 5px; transition: 0.3s; }
+ .nav-links .login { border: 2px solid #055a1c; }
+ .nav-links .signup { background: #4CAF50; color: white; }
+ .nav-links .signup:hover { background: #3d8b40; }
+ .nav-links .login:hover { background: #055a1c; color: white; }
+
+ /* Hero */
+ .hero { position: relative; width: 100%; height: 90vh; background: url('images/background.jpg') no-repeat center center/cover; display: flex; align-items: center; padding: 120px 50px 50px; color: #055a1c; }
+ .hero-content { max-width: 500px; }
+ .hero h1 { font-size: 2.5rem; font-weight: bold; color: #2E8B57; }
+ .hero p { font-size: 1.1rem; margin: 15px 0; color: #333; text-align: center; }
+ .cta-button { background: #4CAF50; color: white; border: none; padding: 12px 24px; font-size: 16px; cursor: pointer; border-radius: 5px; margin-top: 10px; }
+ .cta-button:hover { background: #3d8b40; }
+
+ /* Animations */
+ .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 1s ease-out, transform 1s ease-out; }
+ .fade-in.show { opacity: 1; transform: translateY(0); }
+
+ /* Sections */
+ .how-it-works, .financial-knowledge, .quiz-section, .services-section { background: white; padding: 50px 20px;}
+ .how-it-works h2, .financial-knowledge h2, .services-text h2 { font-size: 2rem; margin-bottom: 15px; text-align: center; }
+ .subtitle, .financial-knowledge p, .services-text p { font-size: 1.1rem; color: #555; margin-bottom: 30px; text-align: center; }
+ 
+ /* Features */
+ .features { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
+ .feature { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; width: 230px; transition: transform 0.3s ease-in-out; }
+ .feature:hover { transform: scale(1.05); }
+ .circle { width: 50px; height: 50px; background: #4CAF50; color: white; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin: 0 auto 10px; font-size: 1.2rem; font-weight: bold; animation: bounce 1.5s infinite alternate; }
+ @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-8px); } }
+
+ /* Knowledge Section */
+ .financial-knowledge { display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; }
+ .financial-knowledge .content { max-width: 600px; }
+ .financial-knowledge ul { list-style: none; margin-bottom: 20px; }
+ .financial-knowledge ul li { margin-bottom: 10px; }
+ .image-container img { width: 500px; max-width: 210%; animation: fadeInLeft 1s ease-in-out; }
+ @keyframes fadeInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+
+ /* Testimonials */
+ .testimonial { display: flex; align-items: center; gap: 10px; margin-top: 20px; opacity: 0; transform: translateY(30px); transition: opacity 1s ease-out, transform 1s ease-out; }
+ .testimonial.show { opacity: 1; transform: translateY(0); }
+ .testimonial img { width: 50px; height: 50px; border-radius: 50%; }
+ .highlight { color: #4CAF50; font-weight: bold; }
+
+ /* Quiz Section */
+ .quiz-section { display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap; }
+ .quiz-text { flex: 1; min-width: 280px; }
+ .quiz-text h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+ .quiz-image { flex: 1; text-align: center; }
+ .quiz-image img { width: 500%; max-width: 600px; border-radius: 12px; }
+
+ /* Services */
+ .services-section { text-align: center; }
+ .services-image img { width: 900%; max-width: 1400px; border-radius: 12px; }
+ .services-text { max-width: 700px; margin: 1rem auto 0; line-height: 1.6; }
+
+  /* Services Section */
+  .services-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.services-header h2 {
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+    color: #c0c0c0;
+    background: linear-gradient(to bottom, #d4f4d7, #fff);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0.7;
+}
+
+.services-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    border: 2px solid #00aa44;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 180px;
+    text-align: center;
+    background: #fff;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+ /* Responsive */
+ @media (max-width: 900px) {
+   .features, .financial-knowledge, .quiz-section { flex-direction: column; text-align: center; }
+   .image-container, .quiz-image { margin-bottom: 20px; }
+   .testimonial { flex-direction: column; text-align: center; }
+   .navbar { flex-direction: column; }
+   .hero { flex-direction: column; padding: 120px 30px 30px; height: auto; text-align: center; }
+   .hero-content { max-width: 100%; }
+ }
+
+
+ .services-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+  max-width: 900px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.service-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.service-card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 120px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.service-card img:hover {
+  transform: scale(1.05);
+}
+
+.service-card h3 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.banner-section {
+  margin: 2rem auto;
+  max-width: 900px;
+  text-align: center;
+  animation: slideIn 1s ease-in-out;
+}
+
+.banner-section img {
+  width: 100%;
+  border-radius: 10px;
+  transition: opacity 0.5s ease;
+}
+
+.banner-section img:hover {
+  opacity: 0.9;
+}
+
+.track-button-container {
+  max-width: 900px;
+  margin: 10px auto;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.track-button {
+  display: block;
+  background: #008833;
+  color: white;
+  padding: 8px 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.track-button:hover {
+  background: #006622;
+  transform: scale(1.02);
+}
+
+.finance-note  {
+  font-size: 1rem;
+  color: #008833;
+  font-weight: bold;
+  margin-top: 10px;
+  animation: fadeIn 2s ease-in-out;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+/* Footer */
+.footer {
+  padding: 1rem;
+  background: #f3f3f3;
+  margin-top: 20px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #444;
+  text-align: center;
+}
+
+.footer b {
+  color: #008833;
+}
+    

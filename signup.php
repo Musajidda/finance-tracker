@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             width: 350px;
             position: relative;
             margin: 20px;
-            border: 5px solid green;
+            border: 5px solid #00994d;
         }
         .logo {
             position: absolute;
@@ -87,21 +87,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .profile-icon {
             width: 50px;
             height: 50px;
-            border: 4px solid green;
+            border: 4px solid #00994d;
             
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 10px auto;
-            color: green;
+            color: #00994d;
         }
         .profile-icon i {
             font-size: 24px;
-            color: green;
+            color: #00994d;
         }
         .container h2 {
-            color: green;
+            color: #00994d;
         }
         .input-field {
             width: 100%;
@@ -111,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             border-radius: 5px;
         }
         .btn {
-            background: green;
+            background: #00994d;
             color: white;
             padding: 10px;
             border: none;
@@ -120,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             width: 100%;
         }
         .btn:hover {
-            background: darkgreen;
+            background: dark#00994d;
         }
         .login-section {
            
@@ -134,7 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             text-align: center;
         }
         .login-btn {
-            background: green;
+            background: #00994d;
             color: white;
             padding: 10px;
             border: none;
@@ -143,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             width: 150px;
         }
         .login-btn:hover {
-            background: darkgreen;
+            background: dark#00994d;
         }
         form {
             display: flex;
@@ -160,7 +160,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .input-group input {
             width: 100%;
             padding: 15px 40px 10px 30px; /* Add space for the icon */
-            border: 3px solid green;
+            border: 3px solid #00994d;
             border-radius: 5px;
 
         }

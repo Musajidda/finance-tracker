@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             padding: 30px;
             display: flex;
             justify-content: end;
-            color: green;
+            color: #00994d;
 
         }
 
@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             padding: 0;
             margin: 0;
             display: flex;
-            color: green;
+            color: #00994d;
         }
 
         nav ul li {
@@ -87,12 +87,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-size: 22px;
             padding: 10px 15px;
             border-radius: 5px;
-            color: green;
+            color: #00994d;
           
         }
 
         nav ul li a:hover {
-            background-color: green;
+            background-color: #00994d;
             color: white;
         }
 
@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .profile-form button {
-            background-color: green;
+            background-color: #00994d;
             color: white;
             padding: 10px;
             border: none;
@@ -121,7 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .profile-form button:hover {
-            background-color: darkgreen;
+            background-color: dark#00994d;
         }
 
         .logout {
@@ -133,7 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .banner {
     width: 100%;
     height: 220px;
-    background: linear-gradient(to right, green,green); /* A blue gradient */
+    background: linear-gradient(to right, #00994d,#00994d); /* A blue gradient */
     color: white;
     text-align: center;
     padding: 30px 50px;
@@ -158,7 +158,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 .sub-banner {
     width: 100%;
     height: 20px;
-    background: linear-gradient(to right, green,green); /* A blue gradient */
+    background: linear-gradient(to right, #00994d,#00994d); /* A blue gradient */
     color: white;
     text-align: center;
     padding: 30px 50px;

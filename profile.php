@@ -106,7 +106,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .profile-form button {
-            background-color: green;
+            background-color: #00994d;
             color: white;
             padding: 10px;
             border: none;
@@ -115,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .profile-form button:hover {
-            background-color: darkgreen;
+            background-color: dark#00994d;
         }
 
         .logout {

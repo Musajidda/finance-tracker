@@ -4,250 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <style>
-        
-        nav {
-           
-           padding: 30px;
-           display: flex;
-           justify-content: end;
-           color: green;
-
-       }
-
-       nav ul {
-           list-style-type: none;
-           padding: 0;
-           margin: 0;
-           display: flex;
-           color: green;
-       }
-
-       nav ul li {
-           margin: 0 15px;
-       }
-
-       nav ul li a {
-           color: white;
-           text-decoration: none;
-           font-size: 22px;
-           padding: 10px 15px;
-           border-radius: 5px;
-           color: green;
-         
-       }
-
-       nav ul li a:hover {
-           background-color: green;
-           color: white;
-       }
-
-              .banner {
-    width: 100%;
-    height: 220px;
-    background: linear-gradient(to right, green,green); /* A blue gradient */
-    color: white;
-    text-align: center;
-    padding: 30px 50px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner h1 {
-    margin: 0;
-    font-size: 80px;
-    font-weight: bold;
-}
-
-.banner h4 {
-    margin-top: 10px;
-    font-size: 28px;
-    
-}
-.sub-banner {
-    width: 100%;
-    height: 20px;
-    background: linear-gradient(to right, green,green); /* A blue gradient */
-    color: white;
-    text-align: center;
-    padding: 30px 50px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.sub-banner h4 {
-    margin: 0;
-    font-size: 30px;
-    font-weight: bold;
-   
-    text-shadow: 0 0 10px rgba(36, 245, 78, 0.89);
-}
-.two-column {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 20px;
-    
-   
-    margin: 0 auto;
-    gap: 10px;
-}
-
-.text-column {
-    flex: 1;
-    min-width: 200px;
-    margin: 20PX auto;
-}
-
-
-
-.text-column p {
-    font-size: 25px;
-    line-height: 1.9;
-}
-
-.video-column {
-    flex: 1;
-    min-width: 300px;
-}
-
-.video-column video {
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-}
-.text p{
-width: 100%;
-font-size: 25px;
-line-height: 1.6;
-}
-.text h1{
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-    margin: 20px 0;
-
-}
-.container {
-      display: flex;
-      align-items: flex-start;
-      padding: 70px;
-      gap: 10px;
-    }
-
-    
-
-    .content-section {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .bannerr {
-        width: 100%;
-    height: 150px;
-    background: linear-gradient(to right, green,green); /* A blue gradient */
-    color: white;
-    text-align: center;
-    padding: 30px 50px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    }
-
-    .description {
-      font-size: 25px;
-      color: #333;
-      max-width: 400px;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .content-section {
-        align-items: center;
-        text-align: center;
-      }
-
-      .banner, .description {
-        max-width: 80%;
-      }
-    }
-
-    .containerr {
-      display: flex;
-      flex-wrap: wrap; /* allows wrapping */
-      gap: 30px;
-      padding: 20px;
-      justify-content: center;
-    }
-
-    /* .video-section {
-      flex: 1 1 200px;
-      min-width: 40%;
-      box-sizing: border-box;
-      border: 2px solid green; /* ✅ Green border */
-   
-      
-  
-
-    .video-section video {
-      width: 40%;
-      max-width: 50%;
-      border-radius: 10px;
-    }
-
-    .bannerrr {
-      background-color: green;
-      color: white;
-      padding: 15px 20px;
-      border-radius: 10px;
-      font-size: 1.5rem;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 15px;
-    }
-
-    .descriptionn {
-      font-size: 20px;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .content-sectionn, .video-section {
-        width: 100%;
-      }
-
-      .bannerrr {
-        width: 100%;
-      }
-
-      .descriptionn {
-        text-align: center;
-      }
-    }
-    </style>
+<script src="script.js"></script>
+   <link rel="stylesheet" href="style.css">
 </head>
 <body>
      <!-- Navigation Bar -->
@@ -296,18 +54,18 @@ line-height: 1.6;
     <h4>Freelancing</h4>
    
 </div>
-<div class="container">
-  <div class="video-section">
-    <video controls>
+<div class="containerr">
+  <div class="video-sectionn">
+  <video controls class="auto-play-video" muted style="max-height: 55vh; width: 100%; object-fit: contain;">
       <source src="assets/videos/Freelancing.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
-  <div class="content-section">
-    <div class="bannerr">
+  <div class="content-sectionn">
+    <div class="bannerrr">
         <h1> Freelance your way</h1>
    </div>
-    <div class="description">
+    <div class="descriptionn">
     Freelancing is one of the most popular ways to earn money online. It allows individuals to offer their skills and services directly to clients across the globe without being tied to a traditional job. Whether you are a writer, graphic designer, web developer, translator, or virtual assistant, freelancing gives you the freedom to choose your projects, set your rates, and work remotely.
 Today, platforms like Upwork, Fiverr, and Freelancer.com connect freelancers with businesses and individuals looking for specific services. Freelancing is ideal for those who want flexible work hours and the ability to build a diverse portfolio while earning.
 
@@ -320,7 +78,7 @@ Today, platforms like Upwork, Fiverr, and Freelancer.com connect freelancers wit
 </div>
 <div class="containerr">
   <div class="video-sectionn">
-    <video controls>
+    <video controls class="auto-play-video" muted>
       <source src="assets/videos/CCreation.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
@@ -341,23 +99,166 @@ As a content creator, you can monetize your work through ads, sponsorships, affi
     <h4>E-Commerce</h4>
    
 </div>
-<div class="container">
-  <div class="video-section">
-    <video controls>
-      <source src="assets/videos/Ecommerce.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-  <div class="content-section">
-    <div class="bannerr">
+<div class="containerr">
+ 
+  <div class="content-sectionn">
+    <div class="bannerrr">
         <h1> Freelance your way</h1>
    </div>
-    <div class="description">
+    <div class="descriptionn">
     Freelancing is one of the most popular ways to earn money online. It allows individuals to offer their skills and services directly to clients across the globe without being tied to a traditional job. Whether you are a writer, graphic designer, web developer, translator, or virtual assistant, freelancing gives you the freedom to choose your projects, set your rates, and work remotely.
 Today, platforms like Upwork, Fiverr, and Freelancer.com connect freelancers with businesses and individuals looking for specific services. Freelancing is ideal for those who want flexible work hours and the ability to build a diverse portfolio while earning.
 
     </div>
   </div>
+  <div class="video-sectionn">
+  <video controls class="auto-play-video" muted style="max-height: 55vh; width: 100%; object-fit: contain;">
+      <source src="assets/videos/Ecommerce.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 </div>
+<div class="sub-banner">
+    <h4>Web3 & Crypto</h4>
+</div>
+<div class="containerr">
+  <div class="video-sectionn">
+  <video controls class="auto-play-video" muted style="max-height: 85vh; width: 100%; object-fit: auto;">
+      <source src="assets/videos/Web3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="content-sectionn">
+    <div class="bannerrr">
+        <h1>Decentralize Yourself</h1>
+    </div>
+    <div class="descriptionn">
+    Web3 is the next phase of the internet focused on decentralization, giving users more control over data and transactions.
+     <br><br> Crypto trading, a key part of Web3, involves buying and selling digital currencies like Bitcoin, Ethereum, or Solana. 
+     <br> <br>
+With crypto trading, people can earn by investing, holding (HODLing), or engaging in activities like staking or yield farming.
+<br><br> Web3 also includes opportunities in NFTs, decentralized apps (dApps), and blockchain-based projects.<br><br> However, it’s important to approach crypto trading with caution due to its high volatility and risk.
+
+    </div>
+  </div>
+</div>
+<div class="sub-banner">
+    <h4>Amazon KDP</h4>
+</div>
+<div class="containerr">
+  <div class="video-sectionn">
+  <video controls  class="auto-play-video" muted style="max-height: 85vh; width: 100%; object-fit: auto;">
+      <source src="assets/videos/Amazon.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <div class="content-sectionn">
+    <div class="bannerrr">
+        <h1>Publish Yourself</h1>
+    </div>
+    <div class="descriptionn">
+    Amazon Kindle Direct Publishing (KDP) is a platform that allows authors and content creators to publish books, eBooks, and journals directly on Amazon. 
+     <br><br> This means you can create and sell your work to millions of Amazon customers without needing a traditional publisher.
+     <br> <br>
+     Amazon KDP offers opportunities to earn royalties by self-publishing fiction or non-fiction books, planners, coloring books, and more. 
+<br><br> The platform is free to use and gives creators full control over pricing, content, and distribution. <br><br> Many entrepreneurs also use KDP to create low-content books such as notebooks and workbooks, making it a powerful tool for passive income generation.
+
+    </div>
+  </div>
+</div>
+
+<!-- Add this section after your existing content -->
+<section class="professional-guide">
+    <div class="guide-container">
+        <h2 class="section-title">Mastering Digital Earnings: Professional Guide</h2>
+        
+        <div class="guide-step">
+            <div class="step-header">
+                <span class="step-icon">✅</span>
+                <h3>1. Choosing Your Professional Path</h3>
+            </div>
+            <p class="step-text">Identify your core competencies and market demands through:</p>
+            <ul class="step-list">
+                <li>SWOT analysis of personal skills</li>
+                <li>Market trend research (Google Trends, Exploding Topics)</li>
+                <li>Competitor benchmarking</li>
+            </ul>
+        </div>
+
+        <div class="guide-step">
+            <div class="step-header">
+                <span class="step-icon">✅</span>
+                <h3>2. Essential Skill Development Matrix</h3>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Freelancing</h4>
+                    <ul>
+                        <li>Client communication</li>
+                        <li>Project management (Asana, Trello)</li>
+                        <li>Technical mastery</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>E-Commerce</h4>
+                    <ul>
+                        <li>Supply chain management</li>
+                        <li>SEO optimization</li>
+                        <li>Conversion rate optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-step">
+            <div class="step-header">
+                <span class="step-icon">✅</span>
+                <h3>3. Professional Tool Stack</h3>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-category">
+                    <h4>Freelancing Suite</h4>
+                    <ul>
+                        <li><strong>Upwork</strong> - Client acquisition</li>
+                        <li><strong>Freshbooks</strong> - Invoicing</li>
+                        <li><strong>Grammarly</strong> - Content quality</li>
+                    </ul>
+                </div>
+                <div class="tool-category">
+                    <h4>E-Commerce Stack</h4>
+                    <ul>
+                        <li><strong>Shopify Plus</strong> - Enterprise storefront</li>
+                        <li><strong>Klaviyo</strong> - Email marketing</li>
+                        <li><strong>Tableau</strong> - Sales analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-step">
+            <div class="step-header">
+                <span class="step-icon">✅</span>
+                <h3>4. Financial Governance Framework</h3>
+            </div>
+            <div class="finance-grid">
+                <div class="finance-pillar">
+                    <h4>💰 Liquidity Management</h4>
+                    <ul>
+                        <li>70/20/10 cash allocation</li>
+                        <li>Emergency fund maintenance</li>
+                    </ul>
+                </div>
+                <div class="finance-pillar">
+                    <h4>📈 Growth Investment</h4>
+                    <ul>
+                        <li>ROI-focused reinvestment</li>
+                        <li>Automated ETF portfolios</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<?php include 'include/footer.php'; ?>
 </body>
 </html>

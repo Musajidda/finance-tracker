@@ -48,7 +48,7 @@
             font-weight: bold;
         }
         .signup {
-            background-color: green;
+            background-color: #00994d;
             color: white;
             padding: 5px 10px;
             border-radius: 5px;
