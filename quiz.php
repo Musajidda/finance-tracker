@@ -20,7 +20,7 @@
     </nav>
 
 
-  <header class="quiz-header">
+  <header class="banner">
     <h1>Test Your Knowledge</h1>
     <p>Discover how far you’ve acknowledged</p>
   </header>
@@ -37,6 +37,7 @@
   </div>
 
   <script src="script.js"></script>
+  <?php include 'include/footer.php'; ?>
 </body>
 </html>
 

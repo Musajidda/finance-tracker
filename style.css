@@ -473,3 +473,79 @@ font-size: 2rem;
 padding: 1.5rem;
 }
 }
+
+
+
+
+.container1  {
+  padding: 0;
+}
+
+/* GREEN HEADER SECTION */
+.container1 h1 {
+  text-align: center;
+  background-color:#00994d; /* Dark Green */
+  color: white;
+  margin: 0;
+  padding: 20px 0;
+  font-size: 32px;
+}
+
+/* GREEN STRIP UNDER HEADER */
+.main-btn {
+  display: block;
+  width: 100%;
+  background: #00994d;
+  color: white;
+  padding: 12px;
+  border: none;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  cursor: default;
+}
+
+/* SECTION HEADINGS */
+.container1 h2 {
+  text-align: center;
+  color: #00994d;
+  margin: 30px 0 15px;
+}
+
+/* TABLES */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+th, td {
+  border: 2px solid green;
+  padding: 10px;
+  text-align: center;
+}
+
+input[type="text"], input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+button.edit {
+  background: none;
+  border: none;
+  font-size: 16px;
+}
+
+button.delete {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: red;
+}
+

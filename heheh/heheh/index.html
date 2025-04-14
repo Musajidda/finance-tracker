@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="pdf-content" class="tracker-box">
+        <h2>Expense Tracker</h2>
+      
+        <input type="text" id="category" placeholder="Category (e.g., Groceries)">
+        <input type="number" id="items" placeholder="Number of Items">
+        <input type="number" id="cost" placeholder="Total Cost ($)">
+        <input type="number" id="remaining" placeholder="Remaining Budget ($)">
+      
+        <button onclick="addExpense()">Add Expense</button>
+        <button onclick="downloadPDF()">Download as PDF</button>
+      
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Items</th>
+              <th>Cost</th>
+              <th>Remaining</th>
+            </tr>
+          </thead>
+          <tbody id="expense-table">
+            <tr>
+              <td>Food</td>
+              <td>23</td>
+              <td>₦3000</td>
+              <td>₦211</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+<!-- html2pdf.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

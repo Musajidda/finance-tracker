@@ -526,3 +526,57 @@ function shuffleArray(array) {
       
         loadQuiz();
       });
+
+
+
+
+      const addBtn = document.getElementById('addBtn');
+const budgetTable = document.getElementById('budgetTable');
+
+addBtn.addEventListener('click', () => {
+  const title = document.getElementById('title').value;
+  const desc = document.getElementById('description').value;
+  const expense = document.getElementById('expense').value;
+  const savings = document.getElementById('savings').value;
+
+  if (!title || !desc || !expense || !savings) {
+    alert("Please fill in all fields!");
+    return;
+  }
+
+  const row = budgetTable.insertRow();
+  row.innerHTML = `
+    <td>${title}</td>
+    <td>${desc}</td>
+    <td>₦${parseInt(expense).toLocaleString()}</td>
+    <td>₦${parseInt(savings).toLocaleString()}</td>
+    <td><button class="edit" onclick="editRow(this)">✏️ Edit</button></td>
+    <td><button class="delete" onclick="deleteRow(this)">🗑️ Delete</button></td>
+  `;
+
+  // Clear input fields
+  document.getElementById('title').value = '';
+  document.getElementById('description').value = '';
+  document.getElementById('expense').value = '';
+  document.getElementById('savings').value = '';
+});
+
+function deleteRow(btn) {
+  const row = btn.parentElement.parentElement;
+  row.remove();
+}
+
+function editRow(btn) {
+  const row = btn.parentElement.parentElement;
+  const cells = row.querySelectorAll('td');
+
+  document.getElementById('title').value = cells[0].innerText;
+  document.getElementById('description').value = cells[1].innerText;
+  document.getElementById('expense').value = cells[2].innerText.replace(/[₦,]/g, '');
+  document.getElementById('savings').value = cells[3].innerText.replace(/[₦,]/g, '');
+
+  row.remove(); // Remove old row to be re-added as new
+}
+
+  
+  

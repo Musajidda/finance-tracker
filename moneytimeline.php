@@ -309,7 +309,7 @@ Bartering also played a significant cultural role. In many societies, it wasn't 
    </main> 
 
        
-  
+   <?php include 'include/footer.php'; ?>
 </body>
 </html>
 

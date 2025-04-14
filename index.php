@@ -188,5 +188,6 @@
     </section>
     
     <script src="script.js"></script>
+    <?php include 'include/footer.php'; ?>
 </body>
 </html>

@@ -51,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
+    <link rel="stylesheet" href="style.css">
     <style>
         /* Styling for the profile page */
         body {
@@ -60,35 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             padding: 0;
         }
 
-        nav {
-            background-color: #333;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            padding: 10px 15px;
-            border-radius: 5px;
-        }
-
-        nav ul li a:hover {
-            background-color: #575757;
-        }
 
         .content {
             padding: 20px;
@@ -162,5 +134,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <button type="submit">Update Profile</button>
         </form>
         <a href="logout.php" class="logout">Logout</a>
+
+        <?php include 'include/footer.php'; ?>
 </body>
 </html>
