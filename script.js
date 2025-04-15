@@ -450,7 +450,7 @@ function shuffleArray(array) {
         scoreDisplay.style.textAlign = 'center';
         scoreDisplay.style.fontWeight = 'bold';
         scoreDisplay.style.marginTop = '20px';
-        quizForm.after(scoreDisplay);
+       
       
         let originalQuizData = [...quizData]; // Use your 40-question array
         let shuffledQuiz = [];
@@ -579,4 +579,11 @@ function editRow(btn) {
 }
 
   
-  
+
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.fade-in, .testimonial').forEach(section => {
+    if (section.getBoundingClientRect().top < window.innerHeight - 100) {
+      section.classList.add('show');
+    }
+  });
+});
