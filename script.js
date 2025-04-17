@@ -587,3 +587,8 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+
+function goToPage() {
+  window.location.href = 'login.php'; 
+}

@@ -12,8 +12,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user && password_verify($password, $user['password'])) {
+        // Store both email AND user ID in session
         $_SESSION['user'] = $user['email'];
-        header("Location: dashboard.php"); // Redirect to dashboard
+        $_SESSION['user_id'] = $user['id'];  // Add this line
+        
+        header("Location: moneytimeline.php"); // Redirect to dashboard
         exit();
     } else {
         $_SESSION['error'] = "Invalid credentials!";
@@ -21,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 }
-?>
+?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>

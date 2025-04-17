@@ -27,7 +27,7 @@
     <div class="hero-content">
       <h1>Welcome to Intelligent Finance Management System</h1>
       <p>Financial literacy is the foundation of smart money management. Understanding how money works—its history, earning potential, and management strategies.</p>
-      <button class="cta-button">Start Learning Today</button>
+      <button class="cta-button" onclick="window.location.href='login.php'">Start Learning Today</button>
       <div class="testimonial">
         <img src="assets/images/emily.png" alt="Emily Johnson">
         <div class="testimonial-text">
@@ -39,9 +39,11 @@
   </section>
 
   <!-- How It Works -->
-  <section class="how-it-works fade-in">
-    <h2>How Intelligent Finance Management System Works</h2>
+  <section class="how-it-works" style="text-align: center; font-size: large;">
+    <h1 style="font-size: larger;">How Intelligent Finance Management System Works</h1>
     <p class="subtitle"><p>Transform your financial journey with ease using Intelligent Finance Management System</p>
+    </section>
+    <section class="features">
     <div class="features">
       <div class="feature"><div class="circle">1</div><h3>Enhance Your Financial Literacy</h3><p>Access curated educational resources that empower you with knowledge about money management and investment opportunities.</p></div>
       <div class="feature"><div class="circle">2</div><h3>Customize Your Financial Goals</h3><p>Define your financial aspirations and set personalized budget plans that align with your unique lifestyle and priorities.</p></div>
@@ -51,7 +53,7 @@
   </section>
 
   <!-- Knowledge Section -->
-  <section class="financial-knowledge fade-in">
+  <section class="financial-knowledge ">
     <div class="image-container"><img src="assets/images/man.png" alt="Finance Management"></div>
     <div class="content">
       <h2>Elevate Your Financial Knowledge to the Highest Level</h2>
@@ -61,7 +63,7 @@
         <li>✅ Monitor your spending habits with intuitive tracking features to make better decisions.</li>
         <li>✅ Access a wealth of educational resources to boost your financial literacy and investment skills.</li>
       </ul>
-      <button class="cta-button" onclick="startJourney()">Start Your Journey Today</button>
+      <button class="cta-button" onclick="window.location.href='login.php'">Start Your Journey Today</button>
       <div class="testimonial">
         <img src="assets/images/daniel.png" alt="Daniel K.">
         <div>
@@ -76,8 +78,9 @@
   <section class="quiz-section">
     <div class="quiz-text">
       <h3>Finance <br><strong>Knowledge Quiz</strong></h3>
-      <p>Test your financial literacy and sharpen your understanding of money management with our interactive Multiple-Choice Questions (MCQs) section.</p>
-      <button class="cta-button" onclick="startQuiz()">Try it.</button>
+      <p>Test your financial literacy <br>
+      and sharpen your <br>understanding of money<br> management with our <br>interactive Multiple-Choice<br> Questions (MCQs) section.</p>
+      <button class="cta-button" onclick="window.location.href='quiz.php'">Try it.</button>
     </div>
     <div class="quiz-image">
       <img src="assets/images/qa.png" alt="Questions and Answers">
