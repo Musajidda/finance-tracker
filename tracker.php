@@ -7,6 +7,8 @@ session_start();
 require 'database.php';
 
 
+$currentMonth = date('Y-m');
+$currentMonth = $_GET['month'] ?? date('Y-m');
 
 
 $userId = $_SESSION['user_id'] ?? null;
@@ -94,24 +96,32 @@ foreach ($spendingByCategory as $category) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- Inside <head> -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<style>
-    body {
-        font-family: 'Inter', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f6f8;
-        color: #333;
-    }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    .expense-tracker {
-        max-width: 1100px;
-        margin: 40px auto;
-        padding: 20px;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+    *, *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+    color: #333;
+    box-sizing: border-box;
+}
+.expense-tracker {
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    box-shadow: none;
+    border-radius: 0;
+}
+
 
     .header h2 {
         font-size: 28px;
@@ -260,40 +270,182 @@ foreach ($spendingByCategory as $category) {
             width: 100%;
         }
     }
+    /* Keep the summary-item box clean */
+.summary-item {
+    flex: 1 1 200px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f9fafc;
+    color: #333;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Icon container */
+.summary-icon {
+    font-size: 20px;
+    padding: 14px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Specific colors */
+.icon-blue {
+    background-color: #3498db;
+}
+
+.icon-orange {
+    background-color: #e67e22;
+}
+
+.icon-green {
+    background-color: #2ecc71;
+}
+
+.summary-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.summary-content label {
+    font-weight: bold;
+    font-size: 14px;
+    color: #444;
+}
+
+.summary-content span,
+.input-group {
+    font-size: 18px;
+}
+.progress-bar-container {
+    margin-top: 10px;
+    width: 100%;
+    background-color: #e0e0e0;
+    height: 8px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+   
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-bar.income {
+    background-color: #3498db;
+}
+
+.progress-bar.spent {
+    background-color: #e67e22;
+}
+
+.progress-bar.remaining {
+    background-color: #2ecc71;
+}
+.expense-analysis-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Shared card styles */
+.card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Make sure the canvas inside chart doesn't overflow */
+.spending-analysis .chart-container {
+    max-width: 85%;
+    height: 85%;
+}
+
+
 </style>
+
 
 </head>
 <body>
     
-
+  <!-- Navigation Bar -->
+  <nav>
+        <ul>
+            <li><a href="moneytimeline.php">MoneyTimeline</a></li>
+            <li><a href="opportunities.php">Opportunities</a></li>
+            <li><a href="quiz.php">Quiz</a></li>
+            <li><a href="planner.php">Planner</a></li>
+            <li><a href="tracker.php">Tracker</a></li>
+            <li><a href="profile.php">Profile</a></li>
+        </ul>
+    </nav>
 
 <div class="expense-tracker">
     <div class="header">
         <h2>Expense Tracker</h2>
         
         <div class="financial-summary">
-            <div class="summary-item">
-                <form action="update_income.php" method="post" class="income-form">
-                    <label>Monthly Income</label>
-                    <div class="input-group">
-                        <span>₦</span>
-                        <input type="number" name="income" value="<?php echo $monthlyIncome; ?>" step="0.01" min="0">
-                        <button type="submit">Update</button>
-                    </div>
-                </form>
+
+<!-- Monthly Income Card -->
+<div class="summary-item">
+    <i class="fas fa-wallet summary-icon icon-blue"></i>
+    <div class="summary-content">
+        <label>Monthly Income</label>
+        <form action="update_income.php" method="post" class="income-form">
+            <div class="input-group">
+                <span>₦</span>
+                <input type="number" name="income" value="<?php echo $monthlyIncome; ?>" step="0.01" min="0">
+                <button type="submit">Update</button>
             </div>
-            <div class="summary-item">
-                <label>Total Spent</label>
-                <span>₦<?php echo number_format($totalSpent, 2); ?></span>
-            </div>
-            <div class="summary-item">
-                <label>Remaining Balance</label>
-                <span>₦<?php echo number_format($remainingBalance, 2); ?></span>
-            </div>
+        </form>
+        <div class="progress-bar-container">
+            <div class="progress-bar income" style="width:100%;"></div>
         </div>
     </div>
+</div>
 
-    <div class="add-expense-form">
+<!-- Total Spent Card -->
+<div class="summary-item">
+    <i class="fas fa-money-bill-wave summary-icon icon-orange"></i>
+    <div class="summary-content">
+        <label>Total Spent</label>
+        <span>₦<?php echo number_format($totalSpent, 2); ?></span>
+        <div class="progress-bar-container">
+            <div class="progress-bar spent" id="spentProgressBar"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Remaining Balance Card -->
+<div class="summary-item">
+    <i class="fas fa-piggy-bank summary-icon icon-green"></i>
+    <div class="summary-content">
+        <label>Remaining Balance</label>
+        <span>₦<?php echo number_format($remainingBalance, 2); ?></span>
+        <div class="progress-bar-container">
+            <div class="progress-bar remaining" id="remainingProgressBar"></div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="expense-analysis-row">
+
+    <!-- Add Expense Form -->
+    <div class="add-expense-form card">
         <h3>Add New Expense</h3>
         <form action="add_expense.php" method="post">
             <div class="form-row">
@@ -338,12 +490,25 @@ foreach ($spendingByCategory as $category) {
         </form>
     </div>
 
-    <div class="spending-analysis">
+    <!-- Spending Chart -->
+    <div class="spending-analysis card">
         <h3>Spending Analysis</h3>
         <div class="chart-container">
             <canvas id="spendingChart"></canvas>
         </div>
     </div>
+
+</div>
+
+
+    <div class="month-filter">
+    <form method="GET" action="tracker.php">
+        <label for="month">Select Month:</label>
+        <input type="month" id="month" name="month" value="<?php echo htmlspecialchars($_GET['month'] ?? date('Y-m')); ?>">
+        <button type="submit">Filter</button>
+    </form>
+</div>
+
 
     <div class="expense-history">
         <h3>Expense History</h3>
@@ -376,12 +541,57 @@ foreach ($spendingByCategory as $category) {
             </table>
         <?php endif; ?>
     </div>
+
+    <div style="margin-top: 40px;">
+    
+    <button type="submit" onclick="exportToPDF()">Download Expenses as PDF</button>
 </div>
+
+
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0"></script>
+
+<!-- jsPDF and autoTable plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+<script src="script.js"></script>
+<script>
+    const centerTextPlugin = {
+        id: 'centerText',
+        afterDraw(chart) {
+            const { width, height, ctx } = chart;
+            const income = <?php echo $monthlyIncome ?: 1; ?>;
+            const spent = <?php echo $totalSpent ?: 0; ?>;
+            const percentSpent = Math.round((spent / income) * 100);
+            const text = percentSpent + "%";
+
+            // Reset transform & styling
+            ctx.save();
+            ctx.font = "bold 24px Inter, sans-serif";
+            ctx.fillStyle = "#333";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+
+            // Fix for high-DPI screens (Chart.js scales canvas internally)
+            const { top, bottom, left, right } = chart.chartArea;
+            const centerX = (left + right) / 2;
+            const centerY = (top + bottom) / 2;
+
+            ctx.fillText(text, centerX, centerY);
+            ctx.restore();
+        }
+    };
+</script>
+
 
 <script>
     const ctx = document.getElementById('spendingChart').getContext('2d');
     const spendingChart = new Chart(ctx, {
-        type: 'pie',
+        type: 'doughnut',
         data: {
             labels: <?php echo json_encode($chartLabels); ?>,
             datasets: [{
@@ -391,16 +601,50 @@ foreach ($spendingByCategory as $category) {
             }]
         },
         options: {
+            cutout: '50%', // donut hole size
             responsive: true,
             plugins: {
                 legend: {
                     position: 'right',
+                    labels: {
+                        color: '#444',
+                        font: {
+                            size: 14
+                        }
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const value = context.parsed;
+                            const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                            const percentage = ((value / total) * 100).toFixed(1);
+                            return `${context.label}: ₦${value} (${percentage}%)`;
+                        }
+                    }
                 }
             }
-        }
+        },
+        plugins: [centerTextPlugin]
     });
 </script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const income = <?php echo $monthlyIncome ?: 0; ?>;
+        const spent = <?php echo $totalSpent ?: 0; ?>;
+        const remaining = income - spent;
+
+        const spentPercent = income > 0 ? (spent / income) * 100 : 0;
+        const remainingPercent = income > 0 ? (remaining / income) * 100 : 0;
+
+        document.getElementById("spentProgressBar").style.width = Math.min(spentPercent, 100) + "%";
+        document.getElementById("remainingProgressBar").style.width = Math.min(remainingPercent, 100) + "%";
+    });
+</script>
 <?php include 'include/footer.php'; ?>
 </body>
 </html>

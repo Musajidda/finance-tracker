@@ -38,8 +38,8 @@
                 <div class="footer-column">
                     <h4 class="footer-title">Contact</h4>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt"></i> 123 Financial Street, NY 10001</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Financial Street, Katsina 10001</li>
+                        <li><i class="fas fa-phone"></i> +234 8062365769</li>
                         <li><i class="fas fa-envelope"></i> support@intelfinance.com</li>
                     </ul>
                 </div>

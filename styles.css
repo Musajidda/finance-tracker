@@ -1,6 +1,10 @@
- /* Global Styles */
- * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
- body { background: #f8f8f8; color: #333; overflow-x: hidden; }
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
 
  header {
   display: flex;
@@ -91,17 +95,7 @@ nav ul li a {
  .quiz-image { flex: 1; text-align: center; }
  .quiz-image img { width: 500%; max-width: 600px; border-radius: 12px; }
 
- /* Services */
- .services-section { text-align: center; }
- .services-image img { width: 900%; max-width: 1400px; border-radius: 12px; }
- .services-text { max-width: 700px; margin: 1rem auto 0; line-height: 1.6; }
-
-  /* Services Section */
-  .services-section {
-    padding: 2rem;
-    text-align: center;
-}
-
+ 
 .services-header h2 {
     font-size: 3rem;
     letter-spacing: 0.5rem;
@@ -319,3 +313,105 @@ Footer */
   border-radius: 10px;
  background-color: #c8f9c9;
 }
+
+
+
+.services-section {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f5f5f5;
+  padding: 40px 0;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Service image */
+.service.image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Cards container */
+.services-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.service-card {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+.service-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.services-text {
+  width: 100%;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.services-text h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.services-text p {
+  font-size: 1em;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Additional Services Container */
+.services-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.services-container .service-card {
+  margin: 20px;
+}
+
+.banner-section {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+ 
+}
+
+.banner-section img {
+  width: 1700px;
+  height: 700px;
+
+  object-fit: cover;
+}
+
+
+/* Track Button */
+.track-button-container {
+  width: 100%;
+  text-align: center;
+  padding: 40px 0;
+  background-color: #1f2937;
+}
+

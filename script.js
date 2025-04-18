@@ -592,3 +592,22 @@ window.addEventListener('scroll', () => {
 function goToPage() {
   window.location.href = 'login.php'; 
 }
+
+
+
+async function exportToPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.text("Expense Report", 14, 16);
+    doc.autoTable({
+        startY: 20,
+        html: 'table', // uses the table in your DOM
+        headStyles: { fillColor: [41, 128, 185] },
+        styles: { fontSize: 10 }
+    });
+
+    doc.save("expenses.pdf");
+}
+
+

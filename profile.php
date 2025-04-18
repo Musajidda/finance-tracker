@@ -9,7 +9,7 @@ if (!isset($_SESSION['user'])) {
 
 $userEmail = $_SESSION['user'];
 
-$stmt = $conn->prepare("SELECT * FROM users WHERE email = :email");
+$stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
 $stmt->execute(['email' => $userEmail]);
 $user = $stmt->fetch();
 
@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!empty($password)) {
             $password = password_hash($password, PASSWORD_BCRYPT);
             $sql = "UPDATE users SET name = :name, email = :email, password = :password, monthly_income = :income WHERE email = :userEmail";
-            $stmt = $conn->prepare($sql);
+            $stmt = $pdo->prepare($sql);
             $stmt->execute([
                 'name' => $name,
                 'email' => $email,
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ]);
         } else {
             $sql = "UPDATE users SET name = :name, email = :email, monthly_income = :income WHERE email = :userEmail";
-            $stmt = $conn->prepare($sql);
+            $stmt = $pdo->prepare($sql);
             $stmt->execute([
                 'name' => $name,
                 'email' => $email,
@@ -183,7 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Navigation Bar -->
     <nav>
         <ul>
-            <li><a href="dashboard.php">Home</a></li>
+           
             <li><a href="moneytimeline.php">MoneyTimeline</a></li>
             <li><a href="opportunities.php">Opportunities</a></li>
             <li><a href="quiz.php">Quiz</a></li>

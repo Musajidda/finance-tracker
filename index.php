@@ -138,19 +138,9 @@
     <img src="assets/images/companion.png" alt="Your Trusted Financial Companion">
 </div>
 
-<!-- Track Expenses Button -->
-<div class="track-button-container">
-    <a href="#" class="track-button">Track Expenses Now</a>
-</div>
 
-<!-- Finance Management Note -->
-<div class="finance-note">
-   Intelligent Finance Management System.
-</div>
-<!-- Footer -->
-<div class="footer">
-    <p><b>© 2025 All rights reserved. Your Trusted Partner</b> in Achieving Financial Freedom. Master your money, set impactful financial goals,<br> and get the knowledge to make smarter decisions every day.</p>
-</div>
+
+<?php include 'include/footer.php'; ?>
 
   <script src="main.js"></script>
 </body>

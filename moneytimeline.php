@@ -15,7 +15,7 @@ $userEmail = $_SESSION['user'];  // Assuming 'user' session stores the email
 
 // Fetch the user data from the database based on the email
 $sql = "SELECT * FROM users WHERE email = :email";
-$stmt = $conn->prepare($sql);
+$stmt = $pdo->prepare($sql);
 $stmt->execute(['email' => $userEmail]);
 $user = $stmt->fetch();
 
@@ -30,12 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Hash the new password if it was provided
         $password = password_hash($password, PASSWORD_BCRYPT);
         $sql = "UPDATE users SET name = :name, email = :email, password = :password WHERE email = :userEmail";
-        $stmt = $conn->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->execute(['name' => $name, 'email' => $email, 'password' => $password, 'userEmail' => $userEmail]);
     } else {
         // If no password change, update name and email only
         $sql = "UPDATE users SET name = :name, email = :email WHERE email = :userEmail";
-        $stmt = $conn->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->execute(['name' => $name, 'email' => $email, 'userEmail' => $userEmail]);
     }
 
@@ -237,7 +237,7 @@ line-height: 1.6;
     <!-- Navigation Bar -->
     <nav>
         <ul>
-            <li><a href="dashboard.php">Home</a></li>
+        
             <li><a href="moneytimeline.php">MoneyTimeline</a></li>
             <li><a href="opportunities.php">Opportunities</a></li>
             <li><a href="quiz.php">Quiz</a></li>

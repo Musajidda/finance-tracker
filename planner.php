@@ -10,7 +10,7 @@
  <!-- Navigation Bar -->
  <nav>
         <ul>
-            <li><a href="dashboard.php">Home</a></li>
+            
             <li><a href="moneytimeline.php">MoneyTimeline</a></li>
             <li><a href="opportunities.php">Opportunities</a></li>
             <li><a href="quiz.php">Quiz</a></li>

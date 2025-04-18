@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     $sql = "SELECT * FROM users WHERE email = :email";
-    $stmt = $conn->prepare($sql);
+    $stmt = $pdo->prepare($sql);
     $stmt->execute(['email' => $email]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['user'] = $user['email'];
         $_SESSION['user_id'] = $user['id'];  // Add this line
         
-        header("Location: moneytimeline.php"); // Redirect to dashboard
+        header("Location: moneytimeline.php"); // Redirect to index
         exit();
     } else {
         $_SESSION['error'] = "Invalid credentials!";
