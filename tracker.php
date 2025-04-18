@@ -6,12 +6,9 @@ session_start();
 
 require 'database.php';
 
-$pdo = new PDO('mysql:host=localhost;dbname=financetracker', 'root', '');
 
-if (!$userId) {
-    header('Location: login.php');
-    exit();
-}
+
+
 $userId = $_SESSION['user_id'] ?? null;
 
 function getUserIncome($userId) {
@@ -96,6 +93,175 @@ foreach ($spendingByCategory as $category) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- Inside <head> -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f6f8;
+        color: #333;
+    }
+
+    .expense-tracker {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 20px;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .header h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #2c3e50;
+    }
+
+    .financial-summary {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .summary-item {
+        flex: 1 1 200px;
+        padding: 20px;
+        background-color: #f9fafc;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+    }
+
+    .summary-item label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #444;
+    }
+
+    .summary-item span,
+    .input-group {
+        font-size: 18px;
+    }
+
+    .income-form .input-group {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .income-form input {
+        width: 100px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    .income-form button {
+        padding: 5px 10px;
+        background-color: #1abc9c;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .income-form button:hover {
+        background-color: #16a085;
+    }
+
+    h3 {
+        margin-top: 40px;
+        margin-bottom: 15px;
+        color: #2c3e50;
+    }
+
+    .add-expense-form,
+    .spending-analysis,
+    .expense-history {
+        margin-bottom: 30px;
+    }
+
+    .form-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 15px;
+    }
+
+    .form-group {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+    }
+
+    .form-group input,
+    .form-group select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+    }
+
+    button[type="submit"] {
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button[type="submit"]:hover {
+        background-color: #2980b9;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+    }
+
+    table th, table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    table th {
+        background-color: #f5f5f5;
+    }
+
+    .chart-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    @media screen and (max-width: 768px) {
+        .financial-summary {
+            flex-direction: column;
+        }
+
+        .form-row {
+            flex-direction: column;
+        }
+
+        .chart-container {
+            width: 100%;
+        }
+    }
+</style>
+
 </head>
 <body>
     
@@ -110,7 +276,7 @@ foreach ($spendingByCategory as $category) {
                 <form action="update_income.php" method="post" class="income-form">
                     <label>Monthly Income</label>
                     <div class="input-group">
-                        <span>$</span>
+                        <span>₦</span>
                         <input type="number" name="income" value="<?php echo $monthlyIncome; ?>" step="0.01" min="0">
                         <button type="submit">Update</button>
                     </div>
@@ -118,11 +284,11 @@ foreach ($spendingByCategory as $category) {
             </div>
             <div class="summary-item">
                 <label>Total Spent</label>
-                <span>$<?php echo number_format($totalSpent, 2); ?></span>
+                <span>₦<?php echo number_format($totalSpent, 2); ?></span>
             </div>
             <div class="summary-item">
                 <label>Remaining Balance</label>
-                <span>$<?php echo number_format($remainingBalance, 2); ?></span>
+                <span>₦<?php echo number_format($remainingBalance, 2); ?></span>
             </div>
         </div>
     </div>
@@ -201,7 +367,7 @@ foreach ($spendingByCategory as $category) {
                             <td><?php echo htmlspecialchars($expense['category']); ?></td>
                             <td><?php echo htmlspecialchars($expense['item_name']); ?></td>
                             <td><?php echo $expense['quantity']; ?></td>
-                            <td>$<?php echo number_format($expense['cost'], 2); ?></td>
+                            <td>₦<?php echo number_format($expense['cost'], 2); ?></td>
                             <td><?php echo htmlspecialchars($expense['note']); ?></td>
                             <td><?php echo date('M j, Y', strtotime($expense['date'])); ?></td>
                         </tr>
@@ -235,6 +401,6 @@ foreach ($spendingByCategory as $category) {
     });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<?php require_once 'includes/footer.php'; ?> 
+<?php include 'include/footer.php'; ?>
 </body>
 </html>
