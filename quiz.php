@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>1
+<head>
   <meta charset="UTF-8">
   <title>Financial Quiz</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <br>
 <?php include 'include/header.php'; ?>
 
   <header class="banner">

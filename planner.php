@@ -6,11 +6,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+<br>
 <?php include 'include/header.php'; ?>
 
   <div class="container1">
     <h1>Budget Your Way</h1>
+    <br>
+    <br>
     <button class="main-btn">Set how much you wish to spend/save</button>
 
     <section class="planner">

@@ -611,3 +611,45 @@ async function exportToPDF() {
 }
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navList = document.querySelector('nav ul');
+  
+  menuToggle.addEventListener('click', function() {
+    // Toggle active class on nav list
+    navList.classList.toggle('active');
+    
+    // Animate hamburger to X
+    if (navList.classList.contains('active')) {
+      menuToggle.querySelector('span:nth-child(1)').style.transform = 'rotate(45deg) translate(5px, 5px)';
+      menuToggle.querySelector('span:nth-child(2)').style.opacity = '0';
+      menuToggle.querySelector('span:nth-child(3)').style.transform = 'rotate(-45deg) translate(7px, -6px)';
+    } else {
+      menuToggle.querySelector('span:nth-child(1)').style.transform = 'rotate(0) translate(0)';
+      menuToggle.querySelector('span:nth-child(2)').style.opacity = '1';
+      menuToggle.querySelector('span:nth-child(3)').style.transform = 'rotate(0) translate(0)';
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Mobile menu toggle
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navList = document.querySelector('.nav-list');
+  
+  menuToggle.addEventListener('click', function() {
+    this.classList.toggle('active');
+    navList.classList.toggle('active');
+  });
+  
+  // Close menu when clicking on a link (for mobile)
+  const navLinks = document.querySelectorAll('.nav-list a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (window.innerWidth <= 768) {
+        menuToggle.classList.remove('active');
+        navList.classList.remove('active');
+      }
+    });
+  });
+});

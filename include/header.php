@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <header>
@@ -31,20 +31,17 @@
   </nav>
   <div class="overlay"></div>
 </header>
-<script >
-
+<script>
 document.addEventListener('DOMContentLoaded', function() {
   const menuToggle = document.querySelector('.menu-toggle');
-  const navbar = document.querySelector('.navbar');
-  const overlay = document.querySelector('.overlay');
+  const navList = document.querySelector('nav ul');
   
   menuToggle.addEventListener('click', function() {
-    // Toggle active class on navbar and overlay
-    navbar.classList.toggle('active');
-    overlay.classList.toggle('active');
+    // Toggle active class on nav list
+    navList.classList.toggle('active');
     
     // Animate hamburger to X
-    if (navbar.classList.contains('active')) {
+    if (navList.classList.contains('active')) {
       menuToggle.querySelector('span:nth-child(1)').style.transform = 'rotate(45deg) translate(5px, 5px)';
       menuToggle.querySelector('span:nth-child(2)').style.opacity = '0';
       menuToggle.querySelector('span:nth-child(3)').style.transform = 'rotate(-45deg) translate(7px, -6px)';
@@ -54,18 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
       menuToggle.querySelector('span:nth-child(3)').style.transform = 'rotate(0) translate(0)';
     }
   });
-  
-  overlay.addEventListener('click', function() {
-    // Close menu when clicking overlay
-    navbar.classList.remove('active');
-    overlay.classList.remove('active');
-    
-    // Reset hamburger animation
-    menuToggle.querySelector('span:nth-child(1)').style.transform = 'rotate(0) translate(0)';
-    menuToggle.querySelector('span:nth-child(2)').style.opacity = '1';
-    menuToggle.querySelector('span:nth-child(3)').style.transform = 'rotate(0) translate(0)';
-  });
 });
 </script>
+<script src="../script.js"></script>
 </body>
 </html>

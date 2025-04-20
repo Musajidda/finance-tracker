@@ -15,7 +15,6 @@ $user = $stmt->fetch();
 
 // Update profile (including monthly income)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST['name'];
     $email = $_POST['email'];
     $income = isset($_POST['monthly_income']) ? floatval($_POST['monthly_income']) : 0;
     $password = $_POST['password'];
@@ -26,20 +25,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         if (!empty($password)) {
             $password = password_hash($password, PASSWORD_BCRYPT);
-            $sql = "UPDATE users SET name = :name, email = :email, password = :password, monthly_income = :income WHERE email = :userEmail";
+            $sql = "UPDATE users SET email = :email, password = :password, monthly_income = :income WHERE email = :userEmail";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
-                'name' => $name,
                 'email' => $email,
                 'password' => $password,
                 'income' => $income,
                 'userEmail' => $userEmail
             ]);
         } else {
-            $sql = "UPDATE users SET name = :name, email = :email, monthly_income = :income WHERE email = :userEmail";
+            $sql = "UPDATE users SET email = :email, monthly_income = :income WHERE email = :userEmail";
             $stmt = $pdo->prepare($sql);
             $stmt->execute([
-                'name' => $name,
                 'email' => $email,
                 'income' => $income,
                 'userEmail' => $userEmail
@@ -71,8 +68,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .content {
+            max-width: 800px;
+            margin: 20px auto;
             padding: 20px;
-            margin: 20px;
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
@@ -80,11 +78,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         .profile-form input, .profile-form select {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             margin: 10px 0;
             border-radius: 5px;
             border: 1px solid #ccc;
             box-sizing: border-box;
+            font-size: 16px;
         }
 
         .profile-form button {
@@ -97,6 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             font-size: 16px;
             width: 100%;
             margin-top: 10px;
+            transition: background-color 0.3s;
         }
 
         .profile-form button:hover {
@@ -107,9 +107,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             display: block;
             margin-top: 20px;
             text-align: center;
-            font-size: 18px;
-            color: #333;
+            font-size: 16px;
+            color: #00994d;
             text-decoration: none;
+            font-weight: bold;
         }
 
         .logout:hover {
@@ -136,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         .financial-info {
             background-color: #f8f9fa;
-            padding: 15px;
+            padding: 20px;
             border-radius: 5px;
             margin: 20px 0;
             border: 1px solid #ddd;
@@ -145,37 +146,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .financial-info h3 {
             margin-top: 0;
             color: #2c3e50;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
         }
 
-        /* Navigation styles */
-        nav {
-            background-color: #2c3e50;
-            padding: 15px 0;
+        h1 {
+            color: #00994d;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #00994d;
+            padding-bottom: 10px;
         }
 
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
+        label {
             font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+            margin-top: 15px;
+            display: block;
         }
 
-        nav ul li a:hover {
-            background-color: #34495e;
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .content {
+                margin: 10px;
+                padding: 15px;
+            }
+            
+            .profile-form input, .profile-form select {
+                padding: 10px;
+            }
         }
     </style>
 </head>
@@ -184,7 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Profile Page Content -->
     <div class="content">
-        <h1>Profile: <?php echo htmlspecialchars($user['email']); ?></h1>
+        <h1>Profile Settings</h1>
 
         <?php if (isset($_SESSION['success'])): ?>
             <div class="alert alert-success">
@@ -201,22 +198,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- Financial Information Section -->
         <div class="financial-info">
             <h3>Financial Information</h3>
-            <p><strong>Current Monthly Income:</strong> ₦<?php echo number_format($user['monthly_income'], 2); ?></p>
+            <p><strong>Current Monthly Income:</strong> ₦<?php echo isset($user['monthly_income']) ? number_format($user['monthly_income'], 2) : '0.00'; ?></p>
             <p>Update your income to ensure accurate budgeting in the Tracker and Planner.</p>
         </div>
 
         <!-- Profile Form -->
         <form action="profile.php" method="POST" class="profile-form">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($user['name']); ?>" required>
-
             <label for="email">Email</label>
             <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($user['email']); ?>" required>
 
             <label for="monthly_income">Monthly Income (₦)</label>
             <input type="number" id="monthly_income" name="monthly_income" 
                    min="0" step="100" 
-                   value="<?php echo htmlspecialchars($user['monthly_income']); ?>" required>
+                   value="<?php echo isset($user['monthly_income']) ? htmlspecialchars($user['monthly_income']) : '0'; ?>" required>
 
             <label for="password">Password (Leave blank to keep current password)</label>
             <input type="password" id="password" name="password" placeholder="New password">

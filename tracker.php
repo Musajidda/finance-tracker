@@ -379,7 +379,7 @@ body {
 
 </head>
 <body>
-    
+    <br>
 <?php include 'include/header.php'; ?>
 
 <div class="expense-tracker">
