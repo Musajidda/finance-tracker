@@ -143,5 +143,24 @@
 <?php include 'include/footer.php'; ?>
 
   <script src="main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navbar = document.querySelector('.navbar');
+  const overlay = document.querySelector('.overlay');
+  
+  menuToggle.addEventListener('click', function() {
+    this.classList.toggle('active');
+    navbar.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+  
+  overlay.addEventListener('click', function() {
+    this.classList.remove('active');
+    menuToggle.classList.remove('active');
+    navbar.classList.remove('active');
+  });
+});
+  </script>
 </body>
 </html>

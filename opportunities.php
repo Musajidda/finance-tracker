@@ -8,19 +8,7 @@
    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <!-- Navigation Bar -->
-     <nav>
-        <ul>
-            
-            <li><a href="moneytimeline.php">MoneyTimeline</a></li>
-            <li><a href="opportunities.php">Opportunities</a></li>
-            <li><a href="quiz.php">Quiz</a></li>
-            <li><a href="planner.php">Planner</a></li>
-            <li><a href="tracker.php">Tracker</a></li>
-            <li><a href="profile.php">Profile</a></li>
-        </ul>
-    </nav>
-
+<?php include 'include/header.php'; ?>
    <main>
     <!-- Banner Section -->
 <div class="banner">
