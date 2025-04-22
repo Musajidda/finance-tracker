@@ -60,22 +60,22 @@ Today, platforms like Upwork, Fiverr, and Freelancer.com connect freelancers wit
     </div>
   </div>
 </div>
-<div class="sub-banner">
+<div class="sub-bannerr">
     <h4>Content Creation</h4>
    
 </div>
-<div class="containerr">
-  <div class="video-sectionn">
+<div class="containerrr">
+  <div class="video-sectionnn">
     <video controls class="auto-play-video" muted>
       <source src="assets/videos/CCreation.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
-  <div class="content-sectionn">
+  <div class="content-sectionnn">
     <div class="bannerrr">
         <h1>Content Creation</h1>
     </div>
-    <div class="descriptionn">
+    <div class="descriptionnn">
     Content creation involves producing and sharing valuable content to engage an audience. This could be through blogging, video production (e.g., YouTube), podcasting, or social media platforms like Instagram, TikTok, or LinkedIn.
 As a content creator, you can monetize your work through ads, sponsorships, affiliate marketing, or selling digital products. Content creation allows individuals to turn their creativity and knowledge into income while building a personal or business brand.
 
@@ -247,6 +247,17 @@ With crypto trading, people can earn by investing, holding (HODLing), or engagin
         </div>
     </div>
 </section>
+<div class="ebook-banner">
+  <h2>Download The E-Book</h2>
+  <div class="ebook-links">
+    <a href="assets/ebooks/amazon.pdf" download>Amazon</a>
+    <a href="assets/ebooks/contentcreation.pdf" download>Content Creation</a>
+    <a href="assets/ebooks/ecommerce.pdf" download>E-Commerce</a>
+    <a href="assets/ebooks/freelancing.pdf" download>Freelancing</a>
+    <a href="assets/ebooks/web3.pdf" download>Web3</a>
+  </div>
+</div>
+
 <?php include 'include/footer.php'; ?>
 </body>
 </html>

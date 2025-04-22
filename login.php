@@ -250,16 +250,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <h2>WELCOME</h2>
               
-                      
                 <form action="login.php" method="POST">
-                    <div class="input-group">
-                        <i class="fa fa-envelope"></i>
-                        <input type="email" name="email" placeholder="Email" required>
-                    </div>
-                    <div class="input-group">
-                        <i class="fa fa-lock"></i>
-                        <input type="password" name="password" placeholder="Password" required>
-                    </div>
+                <div class="input-group">
+                <i class="fa fa-envelope"></i> <!-- Email Icon -->
+                <input type="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fa fa-lock"></i> <!-- Password Icon -->
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+
                     <button type="submit" class="btn">Login</button>
                 </form>
             </div>
@@ -267,7 +268,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="signup-section">
             <h2>New here?</h2>
             <p>Create an account to get started</p>
-            <a href="signup.php"><button type="button" class="signup-btn">Sign Up</button></a>
+            <a href="signup.php"> <button type="submit" class="signup-btn">Sign Up</button></a>
+               
+            
         </div>
     </div>
 </body>

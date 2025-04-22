@@ -48,7 +48,7 @@
         
         <div class="footer-bottom">
             <div class="copyright">
-                &copy; 2024 Intelligence Finance Management System. All rights reserved.
+                &copy; 2025 Intelligence Finance Management System. All rights reserved.
             </div>
             <div class="legal-links">
                 <a href="#">Privacy Policy</a>

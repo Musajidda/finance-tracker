@@ -495,3 +495,114 @@ button.delete {
   }
 }
 
+
+.sub-bannerr {
+  width: 100%;
+  background: linear-gradient(to right, #00994d, #00994d);
+ 
+  text-align: center;
+  padding: 30px 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub-bannerr h4 {
+  margin: 0; 
+  color: #ddd;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(36, 245, 78, 0.89);
+}
+
+.containerrr {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 2rem;
+  flex-wrap: wrap; /* For responsiveness */
+}
+
+.video-sectionnn {
+  flex: 1;
+  min-width: 300px;
+}
+
+.auto-play-video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.content-sectionnn {
+  flex: 1;
+  min-width: 300px;
+}
+
+.bannerrr h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.descriptionnn {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .containerrr {
+    flex-direction: column;
+    padding: 1rem;
+  }
+}
+.ebook-banner {
+  background: linear-gradient(135deg, #00994d, #00994d);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.ebook-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #1e293b;
+}
+
+.ebook-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.ebook-links a {
+  background-color: #27983f;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.ebook-links a:hover {
+  background-color: #1dd845;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .ebook-links {
+    flex-direction: column;
+  }
+}

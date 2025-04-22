@@ -396,8 +396,8 @@ body {
         <form action="update_income.php" method="post" class="income-form">
             <div class="input-group">
                 <span>₦</span>
-                <input type="number" name="income" value="<?php echo $monthlyIncome; ?>" step="0.01" min="0">
-                <button type="submit">Update</button>
+                <input type="number" name="income" value="<?php echo $monthlyIncome; ?>" step="0.01" min="0" readonly>
+
             </div>
         </form>
         <div class="progress-bar-container">
