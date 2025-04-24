@@ -182,8 +182,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     justify-content: space-between;
     align-items: center;
     padding: 40px 20px;
-    
-   
     margin: 0 auto;
     gap: 20px;
 }
@@ -208,6 +206,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 .video-column video {
     width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.two-column1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.text-column1{
+    flex: 1;
+    min-width: 300px;
+    margin: 0 auto;
+    
+}
+
+
+
+.text-column1 p {
+    font-size: 25px;
+    line-height: 1.6;
+}
+
+.video-column1 {
+    flex: 1;
+    min-width: 300px;
+}
+
+.video-column1 video {
+    width: 80%; /* Reduce the width to 80% of the container */
+    height: 480px; /* Reduce the height to 80% of the container */
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
@@ -250,7 +283,7 @@ line-height: 1.6;
 </div>
 <div class="two-column">
     <div class="text-column">
-        <p>
+        <p style="font-size: 23px; left: 0px;">
         Understanding how money has evolved is key to making smart financial decisions today. From the early days of trading goods to the digital currencies of today, the way we use money has shaped economies, societies, and personal wealth. By learning how money has transformed over time, you’ll gain a better understanding of why we trust certain systems, how new financial tools like cryptocurrencies emerged, and how to adapt to the changes happening in the financial world today. Whether you're managing personal savings or running a business, knowing the history of money gives you the power to make informed choices and stay ahead in a fast-changing economy.
         </p>
     </div>
@@ -296,7 +329,48 @@ Bartering also played a significant cultural role. In many societies, it wasn't 
 
 </p>
 </div>
-   </main> 
+<br>
+<div class="text">
+
+
+<h1>Example: Farmers and Fishermen in Ancient Societies</h1>
+<p>
+In coastal villages thousands of years ago, farmers and fishermen often relied on bartering to meet their daily needs. A farmer growing wheat or barley might approach a fisherman returning from the sea with a catch of fish. The farmer would trade baskets of grain for a portion of the fish, ensuring both families had access to varied food sources.
+However, if the fisherman had already stocked up on grain or preferred to trade for salt or tools instead, the farmer might return empty-handed. This highlights the inefficiency caused by the double coincidence of wants — both trader's needs had to perfectly align for the barter to work.
+To overcome this, some communities introduced “trade hubs” where surplus goods were temporarily stored until someone who needed them arrived. These early experiments laid the groundwork for organized marketplaces and later the introduction of commodity money.
+
+</p>
+</div>
+<div class="two-column1">
+<div class="video-column1">
+        <video controls width="100%">
+            <source src="assets/videos/video2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="text-column1">
+        <h2 >Challenges of the Barter System </h2>
+        <p>
+        Despite its significance in early economies, the barter system faced major limitations:
+        </p>
+        <h2>Double Coincidence of Wants </h2>
+        <p>Bartering required both parties to want what the other had. For example, a farmer with grain might need fish, but if the fisherman didn’t need grain at that moment, no trade could occur. This dependence on matching needs made exchanges unpredictable and inefficient.</p>
+        <h2>Lack of Standardized Value</h2>
+        <p>There was no agreed-upon system to determine how many fish equaled a sack of grain or how much pottery was worth compared to a goat. This led to disputes and inconsistent trades.</p>
+    </div>
+   
+</div>
+<div class="text">
+    <h2>Perishability of Goods</h2>
+    <p>Many bartered items, like food or livestock, were perishable. Goods could spoil or lose value before a suitable trade was found.</p>
+    <h2>Inability to Save Wealth</h2>
+    <p>Barter limited the ability to store and accumulate wealth over time. Unlike coins or modern bank accounts, bartered goods could not be easily saved for future use.</p>
+</div>
+<div class="sub-banner">
+    <h4>Understanding the evolution of money at it's core</h4>
+   
+</div>
+</main> 
 
        
    <?php include 'include/footer.php'; ?>
